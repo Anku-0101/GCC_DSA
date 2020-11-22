@@ -1,0 +1,5 @@
+My text file
+
+(a) Content a 
+(b) Content b 
+content added by cat
