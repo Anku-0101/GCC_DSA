@@ -1,0 +1,4 @@
+/*
+Pointers
+A pointer is a variable which stores the address of another variable.
+*/
