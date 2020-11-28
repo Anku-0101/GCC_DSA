@@ -6,6 +6,7 @@ struct emp
     char ename[30];
     float esal; 
 };
+
 int main()
 {
     char* cp;
