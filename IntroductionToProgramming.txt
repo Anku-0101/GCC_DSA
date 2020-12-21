@@ -1,0 +1,61 @@
+
+
+	Program 									--> COMPUTER    				--> CPU
+	(Set/Sequence of instructions)											(Processes Machine language instructions)
+	
+	* Programs managinf hardware resources of a computer such programs are system programs
+	* programs performing specific tasks are application programs like web browser, text editors etc.
+	
+
+
+Machine language instructions :
+Are composed of 0s and 1s 
+example :
+In 20 - bits for arithmetical/logical operations 
+| 0 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 1 | 1 | 1 | 0 | 0 |
+operationCode      operand1 							operand 2
+
+first 4 bits are for various operands : ADD - 0001 ; Subtraction : 0010 etc
+Next 8 and 8 bits are for operand 1 and operand 2 
+-- Programs are not be human readable, depends on specific architecture of machines
+
+
+
+Assembly Language :
+-- Provides better readablity 
+example:
+ADD 4 5 
+But Assembly level language needs to be converted to machine level language as CPU understands Machine level languages only.
+so inorder to convert Assembly code to machine level there is a program called ASSEMBLER.
+Assembly level language --> ASSEMBLER --> Machine language
+-- Just like machine language Assembly level language also is dependent on architecture of CPU
+-- This is also called low level language
+
+
+High Level language : [Abstraction from machine Architecture ] 
+Contains more elements of natural language 
+example:
+C
+C++
+Java 
+Python
+FORTRAN [ First high level language developed by IBM]
+BASIC
+
+High level languages are classified into 
+1. Compiled languages 
+	Source Code --> Compiler --> Machine code 
+	<app.c>						 <app.exe>
+
+2. Interpreted languages 
+	Source Code --> Interpreter --> No executable file is created, 
+									program is executed within Interpreter.
+	
+
+About C :
+	-- high - level language 
+	-- Needs compilation 
+	-- Developed by Dennis Ritchie creator of C, Unix
+
+
+	
