@@ -22,4 +22,5 @@ int main()
 {
     char s[] = {'A', 'M', 'A', 'N', '\0'};
     char val[] = "Name";
+    return 0;
 }
