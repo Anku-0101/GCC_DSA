@@ -75,7 +75,7 @@ int main()
     t = clock() - t; 
     time_taken = ((double)t)/CLOCKS_PER_SEC; // in seconds
     printf("Time taken by Optimized Seive of Eratosthenes is %f ", time_taken);
-    //PrintIntArray(primes, n);
+    PrintIntArray(primes, n);
 
     return 0;
 }

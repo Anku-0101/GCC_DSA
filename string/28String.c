@@ -11,7 +11,7 @@ char s[] = {'A', 'M', 'A', 'N', '\0'};
 also there's a shortcut in c to declare a string
 char s[] = "Aman";
 
-String in Memory
+String in Memory [Stored in contiguous manner like array with null character at the end]
 A string is stored just like an array in the memory only exception is it has a null character at the end
 
 */
@@ -21,6 +21,6 @@ A string is stored just like an array in the memory only exception is it has a n
 int main()
 {
     char s[] = {'A', 'M', 'A', 'N', '\0'};
-    char val[] = "Name";
+    char val[] = "Name"; // In this case c adds a null character automatically 
     return 0;
 }
