@@ -17,7 +17,7 @@ int main()
     char *ptr;
     char str[30];
     printf("Enter string denoted by ptr \n");
-    gets(ptr); // Using scanf will ignore text on or after spaces, to include spaces etc include puts
+    gets(ptr); // Using scanf will ignore text on or after spaces, to include spaces using gets
     printf("Printing string denoted by ptr %s \n",ptr);
     
     printf("Enter string denoted by str[30] \n");

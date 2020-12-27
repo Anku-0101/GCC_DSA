@@ -9,7 +9,7 @@ int main()
     
     scanf("%s", s); // s stands for base address of char array s so no need to pass &s
     
-    
+
     printf("Your name is : %s", s);
 
 }
