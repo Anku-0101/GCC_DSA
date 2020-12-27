@@ -26,7 +26,8 @@ int main()
 
     // Trying to input again(reinitialization) for array initialization, not allowed
     char name[] = "My name is name";
-    //name[] = "My name is not a name";
+    name = "My name is not a name";
+    //printf("String input is %s", name);
 
     return 0;
 }
