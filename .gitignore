@@ -2,4 +2,4 @@
 *.exe
 *.out
 .vs/
-.vscode
+.vscode/
