@@ -3,7 +3,7 @@
 	Program 									--> COMPUTER    				--> CPU
 	(Set/Sequence of instructions)											(Processes Machine language instructions)
 	
-	* Programs managinf hardware resources of a computer such programs are system programs
+	* Programs managing hardware resources of a computer such programs are system programs
 	* programs performing specific tasks are application programs like web browser, text editors etc.
 	
 
