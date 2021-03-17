@@ -13,6 +13,7 @@ int main()
     for(int i = 0; i<n; i++) counter[arr[i]]++;    
     
     result += counter[4];
+    counter[4] = 0;
     int minm;
     if(counter[3] > counter[1]) 
     {
@@ -66,17 +67,6 @@ int main()
     if(counter[1]%4 == 0) result += counter[1]/4;
     else result += counter[1]/4 + 1;    
 
-    
-    //for(int i = 0; i < 5; i++) printf("%d", counter[i]);
-
-    /*
-    5 - 1 2 4 3 3 
-    1 0 
-    3 0 
-    7 1 4
-    7 2 3
-    6 3 2  
-    */
     printf("%d", result);
     return 0;
 }
