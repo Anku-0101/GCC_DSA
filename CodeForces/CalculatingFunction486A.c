@@ -1,10 +1,10 @@
 #include<stdio.h>
 
-int arr[1001];
+long long int arr[100001];
 void calculate()
 {
     long long int res = 0;
-    for(int i = 1; i <=1000; i++)
+    for(int i = 1; i <=1000000; i++)
     {
         if(i % 2 == 0)res += i;
         else res += -1*i;
@@ -15,9 +15,9 @@ void calculate()
 
 long long int function(long long int n)
 {
-    if(n<=1000) return arr[n];
-    if(n %2 == 0) return function(n)- function(n-1);
-    else return -1*function(n-1) + function(n);
+    if(n == 1) return -1;
+    if(n %2 == 0) return n + function(n-1);
+    else return -1*n + function(n-1);
     
 }
 
@@ -25,10 +25,14 @@ int main()
 {
     long long int n;
     scanf("%lld", &n);
-    calculate();
-    long long int res = function(n);
+    //calculate();
+    // long long int res = function(n);
     
+
     
-    printf("%lld", res);
+    if(n%2 == 0)    printf("%lld", n/2);
+    
+    else            printf("%lld", -1*(n/2 + 1));
+    
     return 0;
 }
