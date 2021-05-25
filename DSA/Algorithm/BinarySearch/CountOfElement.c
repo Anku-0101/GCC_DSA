@@ -1,5 +1,6 @@
 #include<stdio.h>
 
+// Time complexicity for this is O(log n) + O(n) ~ O(n)
 int CountOfElementInSortedArray(int arr[], int n, int x)
 {
     int start = 0;

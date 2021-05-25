@@ -1,6 +1,7 @@
 #include<stdio.h>
 int array[2] = {0,0};
 
+// In worst case time complexcity of this method is O(log n) + O(n) ~ O(n)
 int* FirstAndLastIndex(int arr[],int n, int x)
 {
     //int array[2] = {0,0};
