@@ -9,19 +9,19 @@ struct Node
 
 // using Node* poineterToHead(head_) just copies head from main and does no modification to head present 
 // in main method
-// So double pointer variable is used to perform the operation
+// So pointer to pointer variable is used to perform the operation
 void Insert(int num, struct Node** head_)
 {
     if(*head_ == NULL)
     {
-        struct Node* node = (struct Node*)malloc(sizeof(struct Node*));
+        struct Node* node = (struct Node*)malloc(sizeof(struct Node));
         node -> data = num;
         node -> next = NULL;
         *head_ =  node;
     }
     else
     {
-        struct Node* node = (struct Node*)malloc(sizeof(struct Node*));
+        struct Node* node = (struct Node*)malloc(sizeof(struct Node));
         node -> data = num;
         struct Node* tmp = *head_;
         while(tmp -> next != NULL)tmp = tmp -> next;
@@ -34,19 +34,17 @@ void Insert(int num, struct Node** head_)
 void Traverse(struct Node* head)
 {
     int count = 0;
-    struct Node* temp = head;
-
-    while(temp->next != NULL)
+    printf("vlaue of address of HEAD node is = %d and Value of head node is = %d \n", head, head->data);
+    head ->data = 2*head->data;
+    while(head != NULL)
     {
-        printf("value of data at node = %d = %d \n", count++, temp->data);
-        printf("vlaue of address of current node is = %d and next node is = %d\n", temp, temp->next);
-        temp = temp -> next;
+        printf("value of data at node = %d = %d \n", count++, head->data);
+        printf("vlaue of address of current node is = %d and next node is = %d\n", head, head->next);
+        head = head -> next;
 
     }
     
-    printf("value of data at node = %d = %d \n", count++, temp->data);
-    printf("vlaue of address of current node is = %d and next node is = %d \n", temp, temp->next);
-    printf("Total number of elements in linkedlist = %d \n", count);
+    //printf("vlaue of address of HEAD node is = %d and Value of head node is = %d \n", head, head->data);
 }
 
 int main()
@@ -61,6 +59,6 @@ int main()
     Insert(15, &head);
     Insert(31, &head);
     Traverse(head);
-    printf("vlaue of address of head node is = %d and next node is\n", head, head->next);
+    printf("vlaue of address of HEAD node is = %d and Value of head node is = %d \n", head, head->data);
     return 0;
 }
