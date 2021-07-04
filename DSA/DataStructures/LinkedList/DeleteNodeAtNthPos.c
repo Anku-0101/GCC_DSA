@@ -24,7 +24,7 @@ void InsertAt(int n, int value, struct Node** head_)
     }
     else
     {
-        struct Node* newNode = (struct Node*)malloc(sizeof(struct Node*));
+        struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
         newNode -> data = value;
         
         struct Node* temp = NULL;
