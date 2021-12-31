@@ -28,6 +28,7 @@ int StringLength(char str[])
 int main()
 {
 	int N;
+	scanf("%d",&N);
 	return 0;
 }
 
