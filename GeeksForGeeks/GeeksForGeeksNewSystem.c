@@ -27,8 +27,13 @@ int StringLength(char str[])
 
 int main()
 {
-	int N;
-	scanf("%d",&N);
+	int t;
+	scanf("%d",&t);
+
+	while(t--)
+	{
+
+	}
 	return 0;
 }
 
