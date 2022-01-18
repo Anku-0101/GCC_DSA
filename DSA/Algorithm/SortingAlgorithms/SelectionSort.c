@@ -3,7 +3,7 @@
 
 void SelectionSort(int arr[], int num)
 {
-    int sorted[num];
+    //int sorted[num]; NOT REQUIRED
     
 
     for(int i = 0; i < num; i++)
