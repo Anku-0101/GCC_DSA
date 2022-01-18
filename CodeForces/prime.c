@@ -20,7 +20,8 @@
     Space Complexity : O(1) ; int n ; sf(%d, &n) 
        
 
-    Sieve : Time Complexity: O(cuberoot(n)/log(n)) ; O(100/6) = 16; O(21/6) ~ 4
+    Sieve : Time Complexity: O(n(log(log n)))
+    O(cuberoot(n)/log(n)) ; O(100/6) = 16; O(21/6) ~ 4
     Space Complexity : O(n) ; arr[n]; arr[101]
 
 
