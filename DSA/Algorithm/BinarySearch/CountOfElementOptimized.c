@@ -9,7 +9,7 @@ int BinarySearchMinAndMaxIndices(int arr[], int n, int x, int flag)
     int result = -1;
     
     while(start <= end)
-    {int 
+    {
         int mid = start + (end - start)/2;
         if(arr[mid] == x)
         {

@@ -1,8 +1,8 @@
 #include<stdio.h>
 
 // To find first occurance in a sorted array
-// To find the index of last occurance, start = mid +1; instead of end = mind -1;
-// Time complexicity is in this case is  O(log n)
+// To find the index of last occurance, start = mid +1; instead of end = mid -1;
+// Time complexity is in this case is  O(log n)
 int BinarySearchFirstOccurance(int arr[], int n, int x)
 {
     int start = 0;
@@ -13,7 +13,6 @@ int BinarySearchFirstOccurance(int arr[], int n, int x)
     {
         int mid  = start + (end - start)/2;
         
-
         if(arr[mid] == x)
         {
             result = mid;
