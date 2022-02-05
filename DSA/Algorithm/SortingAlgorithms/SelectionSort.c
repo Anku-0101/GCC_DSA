@@ -1,6 +1,10 @@
 #include<stdio.h>
 #include<limits.h>
 
+
+// Find minimum index and put it in the array where it belongs, 
+// 1st minimum at index = 0
+// 2nd minimum at index = 1 and so on
 void SelectionSort(int arr[], int num)
 {
     //int sorted[num]; NOT REQUIRED
@@ -8,7 +12,7 @@ void SelectionSort(int arr[], int num)
 
     for(int i = 0; i < num; i++)
     {
-        int min = INT_MAX;
+        int min = INT_MAX; // can be improved if min just stores index instead of values
         int k;
         for(int j = i; j<num; j++)
         {
