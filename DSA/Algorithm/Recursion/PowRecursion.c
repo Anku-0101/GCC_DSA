@@ -1,11 +1,32 @@
 #include<stdio.h>
 
-int power(int x, int n)
+// Time Complexity = O(n)
+// Space Complexity = O(n)
+int power(int x, int n)  
 {
     if(n == 1)
         return x;
     
     return x*power(x,n-1); 
+}
+
+
+int PowerF(int x, int n)
+{
+    if( n == 1)
+        return x;
+    
+    if(n%2 == 0)
+    {
+        int res = PowerF(x,n/2);
+        return res*res;
+    }
+    else
+    {
+        return x*power(x,n-1);
+    }
+        
+
 }
 
 int main()

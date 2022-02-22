@@ -29,7 +29,7 @@ int main()
     cout<<sum(array)<<"\n";
     cout<<sum(array)<<"\n";
 
-    for(int i = array.size(); i>0; i++)
+    for(int i = array.size(); i>0; i++) // 
     {
         int windowSize = i;
 
