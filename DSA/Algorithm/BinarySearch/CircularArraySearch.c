@@ -13,13 +13,13 @@ int CircularArraySearch(int arr[], int n, int x)
 
         if(arr[mid] == x) return mid;
 
-        else if(arr[mid] >= arr[start])
+        else if(arr[mid] >= arr[start]) // Left side i.e from start till mid is sorted
         {
             if((x <= arr[mid]) && (x >= arr[start])) end = mid -1;
             else start = mid +1;
         }
 
-        else if(arr[mid] <= arr[end])
+        else if(arr[mid] <= arr[end]) // Right side i.e from mid till end is sorted
         {
             if((x <= arr[end]) && (x >= arr[mid])) start = mid +1;
             else end = mid -1;
