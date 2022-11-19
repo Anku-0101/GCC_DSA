@@ -1,0 +1,46 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+class HelloWorld {
+    public static void main(String[] args) {
+        
+        HelloWorld hw = new HelloWorld();
+        System.out.println("Is special number x = 14 ="+ hw.IsSpecialNumber(14));
+    }
+    
+    public boolean IsSpecialNumber(int x){
+        int num = x; // num = 123
+        int sum = 0;
+        // x = 123 , 123 % 10 = 
+        while(x>0){
+            int digit = x%10; // digit = 3, digit = 2, digit = 1
+            sum = sum + fact(digit); // sum = 0 + 6 = 6;, sum = 6 + 2 = 8 , sum = 8 + 1 = 9 
+            x=x/10; // x = 12 , x = 1, x = 0
+        }
+        // sum = 9, num = 123
+        if(sum == num) return true;
+        else return false;
+        }
+        
+    public int fact(int n){
+    
+        if(n<=1)return 1;
+        return n*fact(n-1);
+    }
+    
+    public int find(int [] arr,int a, int b, int c,int k){
+          int low=0;
+          int high=Integer.MAX_VALUE;
+        
+            while(low <= high){
+                int mid=(low+high)/2;
+                
+                if((a*mid*mid+b*mid+c)>=k)
+                    high = mid-1;}
+                else if((a*mid*mid+b*mid+c)  <= k){
+                   low = mid+1;}
+                else return mid;
+            } 
+            return -1;
+        }
+}

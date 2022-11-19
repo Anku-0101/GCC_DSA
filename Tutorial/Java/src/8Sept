@@ -1,0 +1,99 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+        int[] arr = {2,4,5,7,8,11,13,16};
+        
+        HelloWorld  hw = new HelloWorld();
+        System.out.println("Index of target,  3 = " + hw.GetElementIndex(arr, 8, 3) );
+    }
+    
+    // Sorted array
+
+public int GetElementIndex(int[] arr, int size, int target){
+        int index = BinarySearch(arr, 0, size-1, target);
+        return index;
+}
+// Array is in ascending order
+public int BinarySearch(int[] arr, int start, int end, int target){
+             while(start <= end){
+               int mid = (start+end)/2;
+               //Case 1
+                if(arr[mid] == target)
+                    return mid;
+                if(arr[mid] > target)
+                    end = mid -1;
+                 else  // arr[mid] < target
+                     start = mid + 1;
+             }
+            return -1;
+}
+
+/*
+public int binarySearch(int arr[], int start, int end, int target)
+    {
+        if (end >= start && start <= arr.length - 1) {
+ 
+            int mid = start + (end - start) / 2;
+
+            if (arr[mid] == target){
+                return mid;
+}
+             if (arr[mid] > target){
+                return binarySearch(arr, start, mid - 1, target);
+}
+            return binarySearch(arr, mid + 1, end, target);
+        }
+        return -1;
+    }
+*/
+
+}
+
+
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+        int[] arr = {2,1,4,5,6,7};
+        HelloWorld hw = new HelloWorld();
+        
+        System.out.println("The missing number = " + hw.GetMissingNumber(arr,7));
+        
+        System.out.println();
+        
+        System.out.println("The missing number by method2 = " + hw.GetMissingNumber1(arr,7));
+    }
+    public int GetMissingNumber1(int[] arr, int N){
+        int reqSum = (N*(N+1))/2;
+        
+        int sum = 0;
+        
+        for(int i = 0; i < N-1; i++)
+            sum += arr[i];
+            
+        return reqSum - sum;
+        
+    }
+    
+    public int GetMissingNumber(int[] arr, int N){
+        int[] arr1 = new int[N+1];
+        
+        for(int i = 0; i < N-1; i++){
+            arr1[arr[i]] = 1;
+        }
+        
+        int res = -1;
+        for(int i = 1; i<=N; i++){
+            if(arr1[i] == 0){
+                res = i;
+                break;
+            }
+        }
+        return res;
+    }
+}

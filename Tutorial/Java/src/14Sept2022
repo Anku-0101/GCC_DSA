@@ -1,0 +1,37 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+        int[] arr = {10,11,12,15,18,25,26,1,2,5,6,8,9};
+        HelloWorld hw = new HelloWorld();
+        System.out.println("Number of rotation = " + hw.GetNumberOfRotation(arr, 13));
+    }
+    
+    public int GetNumberOfRotation(int[] arr, int size){
+        int low = 0; // start = 0
+        int high = size-1; // end = size-1
+        
+        while(low <= high){
+            if(arr[low] <= arr[high]) // Array is sorted
+                return low;
+            
+            int mid = (low+high)/2;
+            
+            int next = (mid+1)%size;
+            int prev = (mid+size-1)%size;
+            
+            if(arr[mid] <= next && arr[mid] <= prev){
+                return mid;
+            }
+            if(arr[mid] <= arr[high]) // mid to high or right segment is sorted, it denotes ans will lie on left segment
+                high = mid-1;
+            
+            if(arr[mid] >= arr[low])// low to mid or left segment is sorted, it denotes ans will lie on right segment
+                low = mid+1;
+        }
+        
+        return -1;
+    }
+}

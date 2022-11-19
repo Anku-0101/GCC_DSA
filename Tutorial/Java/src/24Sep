@@ -1,0 +1,1111 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+
+class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+        int[] arr = {5,10,15,5,4,5,};
+        HelloWorld hw = new HelloWorld();
+        System.out.println(hw.CountDistinctElements(arr,arr.length));
+        int[] arr1 = {10,5,15,9};
+        System.out.println(hw.GetUnion(arr, arr1));
+        System.out.println(hw.GetIntersection(arr, arr1));
+    }
+    
+    public int CountDistinctElements(int arr[], int size){
+    
+        int res = 0;
+    
+        for(int i = 0; i<size; i++){
+            boolean isRepeat = false;
+            for(int j = 0; j < i; j++){
+                if(arr[i] == arr[j]){
+                    isRepeat = true;
+                    break;
+                }
+            }
+            if(isRepeat == false)
+                res++;
+        }
+        return res;
+    }
+    
+    public ArrayList<Integer> GetIntersection(int[] arr1, int[] arr2){
+        int m = arr1.length;
+        int n = arr2.length;
+        
+        QuickSort(arr1,0,m-1);
+        QuickSort(arr2,0,n-1);
+        ArrayList<Integer> al = new ArrayList<>();
+        
+        int i =0, j = 0;
+        
+        while(i<m && j<n){
+            if(arr1[i] < arr2[j]){
+                i++;
+            }
+            if(arr2[j] < arr1[i]){
+                j++;
+            }
+            else{
+                if(!al.contains(arr1[i]))
+                    al.add(arr1[i]);
+                    
+                    i++;
+                    j++;
+            }
+        }
+        
+        return al;
+        
+    }
+    public ArrayList<Integer> GetUnion(int[] arr1, int[] arr2){
+        int m = arr1.length;
+        int n = arr2.length;
+        
+        int i =0, j = 0;
+        QuickSort(arr1, 0,m-1);
+        QuickSort(arr2, 0,n-1);
+        ArrayList<Integer> al = new ArrayList<>();
+        
+        while(i<m && j<n){
+            if(arr1[i] < arr2[j]){
+                if(!al.contains(arr1[i]))
+                    al.add(arr1[i]);
+                i++;
+            }
+            else if(arr2[j] < arr1[i]){
+                if(!al.contains(arr2[j]))
+                    al.add(arr2[j]);
+                j++;
+            }
+            else {
+                if(!al.contains(arr1[i]))
+                    al.add(arr1[i]);
+                i++;
+                j++;
+            }
+        }
+        return al;
+    }
+    
+    int Partition(int[] arr, int start, int end)
+    {
+    
+        int pivot = arr[end]; 
+        int pivotIndex = start;
+    
+
+        for(int i = start; i <= end; i++)
+        {
+            if(arr[i] < pivot)
+            {
+                Swap(arr,i, pivotIndex);
+                pivotIndex++;
+            }
+        }
+       Swap(arr, pivotIndex, end);
+       return pivotIndex;
+    }
+    private void Swap(int[] arr, int ind1, int ind2){
+        int temp = arr[ind1];
+        arr[ind1] = arr[ind2];
+        arr[ind2] = temp;
+    }
+    
+    void QuickSort(int[] arr, int start, int end)
+    {
+        if(start >= end)
+            return;
+        
+        int pivotIndex = Partition(arr, start, end);
+    
+        QuickSort(arr, start, pivotIndex-1);
+        QuickSort(arr, pivotIndex+1, end);
+    }
+    
+}
+
+
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+
+class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+        HelloWorld hw = new HelloWorld();
+        int[] arr = {1,2,1,2,3,3,4,4};
+        System.out.println(hw.GetDistinct(arr,arr.length));
+    }
+    
+    public int GetDistinct(int[] arr, int size){
+        HashSet<Integer> hs = new HashSet<>();
+        
+        for(int i = 0; i<size; i++){
+            hs.add(arr[i]);
+        }
+        
+        return hs.size();
+    }
+}
+
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+    
+    public static int GetMaxSum(int[]arr,int size)
+    {
+         int maxsum=0;
+         for(int i=0;i<size;i++)
+         {
+            int current_sum=0;
+            for(int j=i;j<size;j++)
+            {
+                current_sum+=arr[j];
+                if(current_sum>maxsum)
+                maxsum=current_sum;
+            }
+            
+         }
+         return maxsum;
+    }
+
+
+}
+
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.HashSet;
+import java.util.ArrayList;
+class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+        int[] arr2 = {5,10,15,5,4,5,};
+        int[] arr1 = {10,5,15,9};
+        
+        union(arr1,arr2);
+        
+        System.out.println("Printing Intersection");
+        System.out.println(FindIntersection(arr1, arr2));
+        
+    }
+    
+    public static ArrayList<Integer> FindIntersection(int[] arr1, int[] arr2){
+        
+        HashSet<Integer> arr1UniqueElements = new HashSet<>();
+        
+        for(int i =0; i<arr1.length; i++){
+            arr1UniqueElements.add(arr1[i]);
+        }
+        
+        ArrayList<Integer> intersection = new ArrayList<>();
+        
+        for(int i =0; i<arr2.length; i++){
+            
+            if(arr1UniqueElements.contains(arr2[i]) && !intersection.contains(arr2[i])){
+                intersection.add(arr2[i]);
+            }
+        }
+        return intersection;
+        
+    }
+    
+    public void FindUnion(int[]arr1,int[]arr2)
+    {
+        HashSet<Integer> hs=new HashSet<Integer>();
+        for (int i = 0; i < arr1.length; i++)
+        {
+            hs.add(arr1[i]);
+           
+        }   
+        for (int i = 0; i < arr2.length; i++)
+        {
+            hs.add(arr2[i]);
+           
+        }
+         System.out.print(hs);
+    }
+    
+    public static void union(int a[],int b[]) {
+        HashSet<Integer> set = new HashSet<>();
+        for (int i = 0; i < a.length; i++) {
+            set.add(a[i]);
+        }
+        
+        for (int i = 0; i < a.length; i++) {
+            set.add(b[i]);
+        }
+        
+        System.out.println(set);
+    }
+
+}
+
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+        //int[] arr2  = {5,10,15,5,4,5,};
+        //int[] arr1 = {10,5,15,9};
+        int[] arr2  = {5,10,15,5,4,5,12,18};
+        int[] arr1 = {10,5,15,9,10,15,12,15,18,17,14};
+        //HelloWorld.intersection(arr1,arr2);
+        //int[] arr = 
+        HelloWorld hw = new HelloWorld();
+        
+        int[] arr = hw.FindIntersection(arr1,arr2);
+        //System.out.println(arr);
+        System.out.println("arr length =" + arr.length);
+        System.out.println(" ANSWER INTERSECTION ");
+        for(int i = 0; i<arr.length; i++){
+            System.out.println(arr[i]);
+
+        }
+        
+    }
+    
+    public int[] FindIntersection(int[] arr1,int[] arr2)
+    {
+        
+        int s1=arr1.length;
+        int s2=arr2.length;
+        
+        
+        int[] arr3=GetDistinct(arr1,s1);
+        int[] arr4=GetDistinct(arr2,s2);
+        
+        int s3=arr3.length;
+        int s4=arr4.length;
+        //int[] res=new int[s3+s4];
+        int len = 0;
+        for(int i=0;i<s3;i++)
+        {
+            for(int j=0;j<s4;j++)
+            {
+                if(arr3[i]==arr4[j])
+                {
+                    //int temp=arr4[j];
+                    //res[i]=temp;
+                    len++;
+                }
+            }
+        }
+        
+        int[] res=new int[len];
+        int k = 0;
+        for(int i=0;i<s3;i++)
+        {
+            for(int j=0;j<s4;j++)
+            {
+                if(arr3[i]==arr4[j])
+                {
+                    int temp=arr4[j];
+                    res[k++]=temp;
+                    //len++;
+                }
+            }
+        }
+        return res;
+    }
+    public int[] GetDistinct(int[]arr,int size)
+    {
+        //int[] temp=new int[size];
+        int len = 0;
+        
+        for(int i=0;i<size;i++)
+        {
+          for(int j=0;j<=i;j++)
+          {
+              if(j==i)
+                {
+                    //int t=arr[i];
+                    //temp[i]=t;
+                    len++;
+                }
+                if(arr[i]==arr[j])
+                {
+                    break;
+                }
+          }
+        }
+        
+        int[] temp = new int[len];
+        int k = 0;
+        for(int i=0;i<size;i++)
+        {
+          for(int j=0;j<=i;j++)
+          {
+              if(j==i)
+                {
+                    int t=arr[i];
+                    temp[k++]=t;
+                }
+                if(arr[i]==arr[j])
+                {
+                    break;
+                }
+          }
+        }
+        return temp;
+    }
+
+
+    public static int[]  GetIntersection (int[] arr1, int[] arr2){
+       int[] temp = new int[arr1.length+arr2.length];
+       int k = 0;
+        for(int i = 0; i<arr1.length; i++ ) {
+            for(int j = 0; j<arr2.length; j++) {
+                if(arr1[i]==arr2[j]){ 
+                    temp[k++] = arr2[j];
+                }
+            }
+        }
+        return temp;
+   }
+
+
+    public static void  intersection (int[] arr1, int[] arr2){
+        for(int i = 0; i<arr1.length; i++ ) {          
+            for(int j = 0; j<arr2.length; j++) {             
+                if(arr1[i]==arr2[j]) {                
+                    System.out.println(arr2[j]);             
+                }          
+            }       
+        }
+    }
+}
+
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+        String[] names = {"Alex", "Aman", "Andy", "Rakesh"};
+        System.out.println(GetStudents(names, names.length));
+        System.out.println(" -- "+ GetStudet(names,names.length));
+    }
+    
+    public static int GetStudents(String[] name, int size){
+        int cnt=0;
+        for(int i=0; i<size; i++){
+            int n = name[i].length();
+            char ch = name[i].charAt(n-1);
+            if(((name[i].charAt(0) == 'a')||(name[i].charAt(0) == 'A')) && (ch=='a' || ch == 'n')) {
+                cnt++ ;
+            }
+        }
+        return cnt;
+    }
+    
+    public static int GetStudet(String [] names,int size){
+        int count=0;
+        for(int i=0;i<=names.length;i++){
+            if(names[i].length()==4){
+                count++;
+            }
+        }
+        return count; // always = names.length;
+    }
+
+
+    
+    public static int GetStudents(String [] names,int size){
+        int count=0;
+        int ans=0;
+        for(int i=0;i<names.length;i++){
+            if(names[i].length()==4)
+            {
+                count++; // 1+1+1
+                ans+=count; // 1+2 + 3 
+            } 
+            
+        }
+        return ans;
+    }
+
+}
+
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+        String name = "Amit Singh";
+        String[] names = new String[15];
+        name[0] = "Amit Singh";
+        name[1] = "Diapk";
+        name[2] = "Ritu";
+        
+    }
+    public static int GetDistinctCount(int arr[], int size){
+        int count = 0;
+        for(int i=0; i<size; i++){ // n
+            boolean flag = false;
+            for(int j=0; j<i; j++){ // n
+                if(arr[i] == arr[j]){
+                    flag = true;
+                    break;
+                }
+            } // O(n^2)
+            if(flag == false){
+                count++;
+            }
+        }
+        return count;
+    }
+    
+    public int countDistinct(int arr[], int size)
+    {
+        int ans = 1;
+        for (int i = 1; i < size; i++) {
+            int j = 0;
+            for (j = 0; j < i; j++)
+                if (arr[i] == arr[j])
+                    break;
+            if (i == j)
+                ans++;
+        }
+        return ans;
+    }
+    
+    public int GetDistinctCount(int arr[], int size)
+    {
+        int res = 1;
+        for (int i = 1; i < size; i++) {
+            int j = 0;
+            for (j = 0; j < i; j++)
+                if (arr[i] == arr[j])
+                    break;
+            if (i == j)
+                res++;
+        }
+        return res;
+    }
+    
+    public int GetDistinctCount(int[]arr,int size)
+    {
+        int count=0;
+        for(int i=0;i<size;i++)
+        {
+           for(int j=0;j<=i;j++)
+           {
+              if(j==i)
+                {
+                    count++;
+                }
+                if(arr[i]==arr[j])
+                {
+                    break;
+                }
+           }
+        }
+        return count;
+    }
+
+    
+    public int GetStudents(String[] names,int size){
+     int count=0;
+    
+    if(names[].charAt(0)=='A' && names.charAt(size-1)==('N' || 'A' ){ count++;
+        count+=1;
+        
+    } 
+    return count;
+    }
+    
+    public int GetStudents(String[] names, int size){
+        int count=0;
+        for(int i=0, i<=size-1; i++){
+            if(names[i].charAt(i)=='A' && names.charAt(size-1)=='N'){
+            count++;
+            return count;
+        }
+    
+      return -1;
+    }
+    
+    public  int GetStudents(String [] names,int size){
+     int ans=0;
+     int count=0;
+    for(int i=0;i<size-1; i++){
+    if(names[i].charAt(0)=='A' && names[i].charAt(size-1)==('N' ||'A') ) {count++ ;
+        ans+=count;
+    }
+    }
+    return count;
+    }
+        // names = {AMAN, Akash, Akansha};    
+    public int GetStudents(String[] names, int size){
+        int count=0;
+      for(int i=0; i < size-1; i++){ // 0 to size-2
+        if(names[i]charAt(i)=='A' && names[i].charAt(size-1)=='N'){
+            count++;
+            return count;
+        }
+    return -1;
+    }
+    
+}
+
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+        int[] arr = {4,5,5,5,10,15};//{5,10,15,5,4,5,};
+        int[] arr1 = {5,9,10,15};//{10,5,15,9};
+        
+        System.out.println(HelloWorld.FindUnion(arr,arr1));
+        
+    }
+    
+    public int[] GetDistinct(int[]arr,int size)
+    {
+        int[] temp=new int[size];
+        for(int i=0;i<size;i++)
+        {
+          for(int j=0;j<=i;j++)
+          {
+              if(j==i)
+                {
+                    int t=arr[i];
+                    temp[i]=t;
+                }
+                if(arr[i]==arr[j])
+                {
+                    break;
+                }
+          }
+        }
+        return temp;
+    }
+    public int[] FindIntersection(int[] arr1,int[] arr2)
+    {
+        
+        int s1=arr1.length;
+        int s2=arr2.length;
+        
+        int[] res=new int[s1+s2]; 
+        int[] arr3=GetDistinct(arr1,s1);
+        int[] arr4=GetDistinct(arr2,s2);
+        for(int i=0;i<s1;i++)
+        {
+            for(int j=0;j<s2;j++)
+            {
+                if(arr3[i]==arr4[j])
+                {
+                    int temp=arr4[j];
+                    res[i]=temp;
+                }
+            }
+        }
+        return res;
+    }
+    public static int[] InterSection(int arr1[], int arr2[]){
+        int arr1 = arr1.length;
+        int arr2 = arr2.length;
+       int i = 0;
+       int j = 0;
+ 
+       while(i < arr1.length && j < arr2.length) { 
+         if(arr1[i] == arr2[j]) { 
+            System.out.println(arr1[i]); 
+            i++; 
+            j++; 
+         } else if(arr1[i] > arr2[j]) {
+           j++;
+         } else {
+           i++;
+        }
+    } 
+  }
+    public static int[] GetIntersection(int arr1[], int arr2[]){
+        int m = arr1.length;
+        int n = arr2.length;
+        int i=0, j=0;
+        while(i<m && j<n){
+            if(arr1[i] < arr2[j]){
+                i++;
+            }
+            else if(arr1[i] > arr2[j]){
+                j++;
+            }
+            else{
+                System.out.print(arr2[j]+" ");
+                j++; i++;
+            }
+        }
+        return arr1;
+    }
+    //int[] arr = {5,10,15,5,4,5,};
+    //int[] arr1 = {10,5,15,9};
+    // This will NOT EVEN WORK FOR SORTED ARRAY
+    public static int[] FindUnion(int arr1[], int arr2[]){
+        int m = arr1.length;
+        int n = arr2.length;
+        
+        int i=0, j=0;
+        while(i<m && j<n){
+            if(arr1[i] < arr2[j]){
+                System.out.print(arr1[i]+" ");
+                i++;
+            }
+            else if(arr1[i] >arr2[j]){
+                System.out.print(arr2[j]+" ");
+                j++;
+            }
+            else{
+                System.out.print(arr2[j]+" ");
+                i++; j++;
+            }
+        }
+        while(i<m){
+            System.out.print(arr1[i++]+" ");
+        }
+        while(j<n){
+            System.out.print(arr2[j++]+" ");
+        }
+        return arr1;
+    }
+}
+
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+
+class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+        int[] arr = {5,10,15,5,4,5,};
+        HelloWorld hw = new HelloWorld();
+        System.out.println(hw.CountDistinctElements(arr,arr.length));
+        int[] arr1 = {10,5,15,9};
+        System.out.println(hw.GetUnion(arr, arr1));
+        System.out.println(hw.GetIntersection(arr, arr1));
+    }
+    
+    public int CountDistinctElements(int arr[], int size){
+    
+        int res = 0;
+    
+        for(int i = 0; i<size; i++){
+            boolean isRepeat = false;
+            for(int j = 0; j < i; j++){
+                if(arr[i] == arr[j]){
+                    isRepeat = true;
+                    break;
+                }
+            }
+            if(isRepeat == false)
+                res++;
+        }
+        return res;
+    }
+    
+    public ArrayList<Integer> GetIntersection(int[] arr1, int[] arr2){
+        int m = arr1.length;
+        int n = arr2.length;
+        
+        QuickSort(arr1,0,m-1);
+        QuickSort(arr2,0,n-1);
+        
+        ArrayList<Integer> al = new ArrayList<>();
+        
+        int i =0, j = 0;
+        
+        while(i<m && j<n){
+            if(arr1[i] < arr2[j]){
+                i++;
+            }
+            if(arr2[j] < arr1[i]){
+                j++;
+            }
+            else{
+                if(!al.contains(arr1[i]))
+                    al.add(arr1[i]);
+                    
+                    i++;
+                    j++;
+            }
+        }
+        
+        return al;
+        
+    }
+    public ArrayList<Integer> GetUnion(int[] arr1, int[] arr2){
+        int m = arr1.length;
+        int n = arr2.length;
+        
+        int i =0, j = 0;
+        QuickSort(arr1, 0,m-1);
+        QuickSort(arr2, 0,n-1);
+        
+        ArrayList<Integer> al = new ArrayList<>();
+        
+        while(i<m && j<n){
+            if(arr1[i] < arr2[j]){
+                if(!al.contains(arr1[i]))
+                    al.add(arr1[i]);
+                i++;
+            }
+            else if(arr2[j] < arr1[i]){
+                if(!al.contains(arr2[j]))
+                    al.add(arr2[j]);
+                j++;
+            }
+            else {
+                if(!al.contains(arr1[i]))
+                    al.add(arr1[i]);
+                i++;
+                j++;
+            }
+        }
+        return al;
+    }
+    
+    int Partition(int[] arr, int start, int end)
+    {
+    
+        int pivot = arr[end]; 
+        int pivotIndex = start;
+    
+
+        for(int i = start; i <= end; i++)
+        {
+            if(arr[i] < pivot)
+            {
+                Swap(arr,i, pivotIndex);
+                pivotIndex++;
+            }
+        }
+       Swap(arr, pivotIndex, end);
+       return pivotIndex;
+    }
+    private void Swap(int[] arr, int ind1, int ind2){
+        int temp = arr[ind1];
+        arr[ind1] = arr[ind2];
+        arr[ind2] = temp;
+    }
+    
+    void QuickSort(int[] arr, int start, int end)
+    {
+        if(start >= end)
+            return;
+        
+        int pivotIndex = Partition(arr, start, end);
+    
+        QuickSort(arr, start, pivotIndex-1);
+        QuickSort(arr, pivotIndex+1, end);
+    }
+    
+}
+
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+import java.util.*;
+
+class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+        //HASHSETIntro();
+        //System.out.println(ASCIIMap());
+        //System.out.println("ASCII Value of P = "+ ASCIIMap().get('P'));
+        int[] arr = {1, 1, 1, 1, 5};
+        HelloWorld hw = new HelloWorld();
+        hw.print(arr);
+        
+    }
+    
+    public  void print(int[] arr){
+        HashMap<Integer,Integer> hm = new HashMap<>();
+        
+        for(int i = 0; i < arr.length; i++){
+            if(hm.containsKey(arr[i]))
+            {
+                hm.put(arr[i], hm.get(arr[i]) + 1);
+            }
+            else
+            {
+                hm.put(arr[i], 1);
+            }
+        }
+        
+        ArrayList<Integer> unique = GetDistinctElements(arr);
+        
+        int[] unique_ = new int[unique.size()];
+        
+        for(int i = 0; i<unique.size(); i++)
+            unique_[i] = unique.get(i);
+            
+        QuickSort(unique_,0,unique_.length-1);
+        
+        for(int i = 0; i<unique_.length; i++){
+            if(hm.get(unique_[i]) > 1){
+                System.out.println(unique_[i] + " " +hm.get(unique_[i]));
+                System.out.println();
+            }
+        }
+
+    }
+    public ArrayList<Integer> GetDistinctElements(int[] arr){
+        HashSet<Integer> hs = new HashSet();
+        for(int i = 0; i<arr.length; i++){
+            hs.add(arr[i]);
+        }
+        
+        ArrayList<Integer> al = new ArrayList<>();
+        Iterator it = hs.iterator();
+        while(it.hasNext()){
+            al.add((Integer)it.next());
+        }
+        return al;
+        
+    }
+    
+        int Partition(int[] arr, int start, int end)
+    {
+    
+        int pivot = arr[end]; 
+        int pivotIndex = start;
+    
+
+        for(int i = start; i <= end; i++)
+        {
+            if(arr[i] < pivot)
+            {
+                Swap(arr,i, pivotIndex);
+                pivotIndex++;
+            }
+        }
+       Swap(arr, pivotIndex, end);
+       return pivotIndex;
+    }
+    private void Swap(int[] arr, int ind1, int ind2){
+        int temp = arr[ind1];
+        arr[ind1] = arr[ind2];
+        arr[ind2] = temp;
+    }
+    
+    void QuickSort(int[] arr, int start, int end)
+    {
+        if(start >= end)
+            return;
+        
+        int pivotIndex = Partition(arr, start, end);
+    
+        QuickSort(arr, start, pivotIndex-1);
+        QuickSort(arr, pivotIndex+1, end);
+    }
+    
+    public static HashMap<Character,Integer> ASCIIMap(){
+        HashMap<Character,Integer> map = new HashMap<>();
+        
+        for(int i = 65; i<=90; i++){
+            char ch = (char)i;
+            map.put(ch,i);
+        }
+        
+        for(int i = 97; i<=122; i++){
+            char ch = (char)i;
+            map.put(ch,i);
+        }
+        
+        return map;
+    }
+    
+    public static void HASHSETIntro(){
+        HashSet<String> hs = new HashSet<String>();
+        
+        System.out.println("Before inserting anything");
+        System.out.println("IS EMPTY = "+hs.isEmpty());
+        System.out.println("Size  = "+ hs.size());
+        
+        hs.add("Dipak");
+        hs.add("Amit");
+        hs.add("Nitish");
+        hs.add("Ritu");
+        hs.add("Asish");
+        hs.add("Pawan");
+        hs.add("Pawan");
+        hs.add("Pawan");
+        hs.add("Pawan");
+        hs.add("Nitish");
+        
+        System.out.println("After inserting");
+        System.out.println("IS EMPTY = "+hs.isEmpty());
+        System.out.println("Size  = "+ hs.size());
+        
+        System.out.println("Removing Dipak "+hs.remove("Dipak"));
+        System.out.println("Removing Aman "+hs.remove("Aman"));
+        
+        System.out.println("Is Nitish present " + hs.contains("Nitish"));
+        System.out.println("Is Dipak present " + hs.contains("Dipak"));
+        
+        System.out.println("Size  = "+ hs.size());       
+        
+        // Array -> iterate using for loop , 0 to size
+        
+        Iterator itr = hs.iterator();
+        //Iterator class has 2 main methods
+        // 1. hasNext() -> returns true if next element is present or not
+        // 2. next() -> returns the next element 
+        
+        Iterator it = hs.iterator();
+        
+        System.out.println("Traversing Hashset");
+        while(it.hasNext()){
+            System.out.println(it.next());
+        }
+        
+    }
+}
+
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+        int[] arr = {10,15,-5,15,-10,5};
+        subArraySum(arr,25);
+    }
+    // Start Index = 
+    // End Index = 
+    public static void subArraySum(int arr[], int sum)
+    {
+        int n = arr.length;
+        for (int i = 0; i < n; i++) {
+            int currentSum = 0;
+            for (int j = i ; j < n; j++) {
+                currentSum = currentSum + arr[j];
+                if (currentSum == sum) {
+                    System.out.println("Start Index = " + i);
+                    System.out.println("End Index = " + j);
+                    System.out.println("------");
+                }
+            }
+        }
+        //System.out.println("Not found");
+    }
+
+
+}
+
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+        int arr[] = {-2,3,1,-4,5,2,0,-6};
+        int[] res = prefixSum(arr,arr.length);
+        
+        for(int i =0; i<res.length; i++)
+            System.out.println(res[i]);
+    }
+    
+    // Kadane's algorithm 
+   public static int GetMaxSum(int []arr,int size)
+   {
+         int maxsum=0;
+
+         int current_sum=0; // prefix sum 
+         for(int i=0;i<size;i++)
+         {
+            current_sum+=arr[i];
+            
+            if(current_sum>maxsum)
+                maxsum = current_sum;
+            
+            if(current_sum < 0)
+                current_sum = 0;
+         }
+         return maxsum;
+   }
+    
+    static void GetDistinctWindowCount(int []arr,int k){
+        HashMap<Integer,Integer>map=new HashMap<>();
+        for(int i=0;i<k;i++){
+            if(map.contain(arr[i]))
+                map.put(arr[i], map.get(arr[i])+1);
+            else{
+                map.put(arr[i],1);
+            }
+            
+            System.out.println(map.size());
+            
+        }
+        for(int i=k;i<arr.length;i++){
+            if (map.get(arr[i - k]) == 1) {
+                map.remove(arr[i - k]);
+        } else 
+         map.put(arr[i - k], map.get(arr[i - k]) - 1);
+         
+          map.put(arr[i], map.getOrDefault(arr[i], 0) + 1);
+          System.out.println(map.size());
+        }
+   }
+
+
+    public static void GetSubArray(int arr[], int sum){
+         int currentSum = 0; // PrefixSum at index 'i'
+         int startIndex = 0, endIndex = -1;
+         int n = arr.length;
+         HashMap<Integer, Integer> hm = new HashMap<>();
+         
+         int maxSeglen = -1;
+         for(int i=0; i<n; i++){ // O(N) // CODE IS OPTIMIZED, O(N^2)
+             currentSum = currentSum + arr[i]; 
+             if(currentSum==sum){ // currentSum - sum == 0
+                 start=0;end = i;
+                 
+                 
+                 int segmentLen = end - start +1;
+                 if(segmentLen > maxSeglen)
+                    maxSeglen = segmentLen
+                    
+                 System.out.println("start Index = "+ start);
+                 System.out.println("End Index = "+ end);
+             }
+             if(hm.containsKey(currentSum-sum)){
+                 start = hm.get(currentSum-sum)+1;
+                 end = i;
+                 
+                 int segmentLen = end - start +1;
+                 if(segmentLen > maxSeglen)
+                    maxSeglen = segmentLen
+                 System.out.println("start Index = "+ start);
+                 System.out.println("End Index = "+ end);
+             }
+             hm.put(countSum, i);
+         }
+         if(end==-1){
+                System.out.println("not Found");
+         }
+         
+    }
+
+
+    public static int[] prefixSum(int arr[], int size){
+        int pref[] = new int[size];
+        
+        pref[0] = arr[0]; 
+        for(int i=1; i<size; i++){
+            pref[i] = pref[i-1] + arr[i];
+        }
+        
+        return pref;
+    }
+}
