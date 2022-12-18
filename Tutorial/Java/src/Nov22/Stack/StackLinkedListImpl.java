@@ -71,3 +71,4 @@ public class StackAsLinkedList {
         System.out.println("Top element is " + sll.peek());
     }
 }
+
