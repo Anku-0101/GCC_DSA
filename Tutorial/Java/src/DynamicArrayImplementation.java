@@ -40,6 +40,9 @@ public static void main(String[] args){
         return -1;
  }
  
+ public void set(int index, int value, int[] arr){
+     arr[index] = value;
+ }
  // It removes last inserted element 
  public int Remove() {
     if(index >0)
