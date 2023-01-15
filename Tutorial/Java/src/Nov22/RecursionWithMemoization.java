@@ -14,6 +14,8 @@ class Main{
         System.out.println("Old Fib executed");
     }
     
+    // TC - O(n)
+    // SC - O(n)
     public static int Fib(int n){
         if(n < 2){
             arr[n] = n;
