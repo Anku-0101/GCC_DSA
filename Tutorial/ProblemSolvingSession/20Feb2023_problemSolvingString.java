@@ -184,3 +184,32 @@ public static void MatchingContest(String[] args) {
             System.out.print("No");
         }*/
     }
+
+
+public static void SimpleNumbersI(String[] args) {
+        // Your code here
+        Scanner sc= new Scanner(System.in);
+        String N= sc.next();
+        
+        int count = 0;
+        boolean flag = false;
+        for(int i=1; i<N.length(); i++){
+            if(N.charAt(i) == N.charAt(i-1)){
+                count++;
+                if(count == 2){
+                    flag = true;
+                    break;
+                }
+
+            }
+            else{ // reset if the consecutive numbers are not same
+                count = 0;
+            }
+        }
+        if(flag){
+            System.out.print("Awesome");
+        }
+        else{
+            System.out.print("Good");
+        }
+    }
