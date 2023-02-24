@@ -213,3 +213,96 @@ public static void SimpleNumbersI(String[] args) {
             System.out.print("Good");
         }
     }
+
+
+
+class Main{    
+    public static void main(String[] args){
+         //System.out.println(Isprime2(201));
+         //int rem = findRemainder(10,3);
+         //System.out.println(rem);
+         int ans = reverse(123);
+         System.out.println(ans);
+    }
+    
+    //public static int findRemainder(int num, int divisor){ retlurn num%divisor }
+    
+    public static int findRemainder(int num, int divsior){
+        int remainder = num% divsior; // modulo operator divides the number and returns the remainder
+        return remainder;
+        
+    }
+    
+    static int reverse(int num){
+        int rev =0;
+        while (num>0){
+            int rem = num%10;
+            rev =rev*10+rem;
+            num =num/10;
+        }
+        return rev;
+    }
+    
+    /*
+    public static int Reverse(int num){
+        if(num<10){ 
+            System.out.print(num);
+        }
+
+        else{ 
+            System.out.print(num%10);
+            Reverse(num/10); // 
+        }
+
+    }
+    public static int findUnitDigitOfNumber(int num){
+        return num%10;
+    }
+    
+    /*
+    public static String Reverse(String str){
+        String result = Str.charAt(Str.length()-1);
+    }
+    
+    
+    // num : 345 -> 543
+    public static int Reverse(int num){
+        
+    }
+    
+    public static int findUnitDigitOfNumber(int num){
+        
+    }
+    
+    public static int findRemainder(int num, int divisor){
+        
+    }*/
+    
+    // if a number is composite then it has atleast one factor which is 
+    // less than equal to sqrt(n)
+    static boolean Isprime2(int n){
+        //int i;
+        for(int i=2; i*i<=n; i++){
+            if(n%i==0){ 
+                return false;
+            }
+        }
+        // coming out of this loop means we haven't found any factor of n
+        // this indicates number n is prime
+        return true;
+    }
+    
+    // this method will return true for prime numbers 
+    // this method will return false for composite numbers
+    static boolean Isprime1(int n){
+        for(int i=2; i<n; i++){
+            if(n%i == 0){
+                return false;
+            }
+        }
+        // coming out of this loop means we haven't found any factor of n
+        // this indicates number n is prime
+        return true; 
+    }
+    
+}
