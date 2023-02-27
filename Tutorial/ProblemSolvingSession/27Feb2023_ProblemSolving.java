@@ -53,3 +53,88 @@
         }
         return false;
     }
+import java.util.*;
+
+
+class Main{    
+    public static void main(String[] args){
+        int[] arr = {1,2,3,4,5};
+        System.out.println(isArraySorted(arr));
+        
+    }
+    static boolean isArraySorted(int[] arr, int start, int end){
+        return true;
+    }
+    
+    static boolean isArraySorted(int[] arr){
+        boolean isAscending = true;
+        for(int i = 0; i < arr.length-1; i++){
+            if(arr[i] > arr[i+1]){
+                isAscending = false;
+                break;
+            }
+        }
+        
+        boolean isDescending = true;
+        for(int i = 1; i < arr.length; i++){
+            if(arr[i-1] < arr[i]){
+                isDescending = false;
+                break;
+            }
+        }
+        
+        return (isAscending || isDescending);
+    }    
+    
+    static int getMaxElement(int[] arr){
+        int i;
+        int max = arr[0];
+        
+        for (i = 1; i < arr.length; i++){
+            if (arr[i] > max)
+                max = arr[i];
+        }
+        
+        return max;
+    }
+    
+    static int getMinElement(int[] a){
+        int m =a[0];
+
+        for (int i = 1; i < a.length; i++){
+            if (a[i] < m){
+                m = a[i];
+            }
+        }
+        return m;
+        
+    }
+    static int getMaxIndex(int[] arr){
+        int index = 0;
+        int max = arr[index];
+
+        for(int i=1;i<arr.length;i++){
+            if(arr[i]>=max){
+                max = arr[i];
+                index = i;
+            }
+        }
+        return index;
+    }
+    static int getMinIndex(int[] arr){
+        int index = 0;
+        int min = arr[index];
+        
+        for (int i = 1; i < arr.length; i++){
+            if (arr[i] <= min){
+                min = arr[i];
+                index = i;
+            }
+        }
+        return index;
+    }
+    
+    
+    
+    
+}
