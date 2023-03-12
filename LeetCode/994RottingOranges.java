@@ -1,4 +1,6 @@
 class Solution {
+    /// not a good practice, here grid which is passed as reference is modified,
+    /// we can keep count of fresh initially and each time there's a change in any cell we can update count and at last can check if cntFresh == count
     public int orangesRotting(int[][] grid) {
         int m = grid.length;
         int n = grid[0].length;
