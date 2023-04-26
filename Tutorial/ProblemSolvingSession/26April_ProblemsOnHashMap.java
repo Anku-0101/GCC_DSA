@@ -35,3 +35,54 @@ class Main {
        System.out.println(pairSum(arr,k));
     }
 }
+
+///////////
+
+// Check for valid paranthesis
+// paranthesis includes - () , [], {}
+
+import java.util.*;
+
+class Main{
+    public static void main(String[] args){  
+        System.out.println(isBalanced("(){{[(]}}"));
+    }
+
+    public static boolean isBalanced(String str){
+        Stack<Character> st = new Stack<Character>();
+
+        for(int i = 0; i < str.length(); i++){
+            char ch = str.charAt(i);
+            boolean isValid = false;
+            if(ch == '(' || ch == '[' || ch == '{'){
+                st.push(ch);
+            }
+            else{
+                char atTop = st.peek();
+                if(ch == ')' && atTop == '('){
+                    st.pop();
+                    isValid = true;
+                    continue;
+                }
+                
+                if(ch == ']' && atTop == '['){
+                    st.pop();
+                    isValid = true;
+                    continue;
+                }
+                
+                if(ch == '}' && atTop == '{'){
+                    st.pop();
+                    isValid = true;
+                    continue;
+                }
+
+                if(!isValid){
+                    return false;
+                }
+            }
+        }
+        
+        return st.isEmpty();
+    }
+}
