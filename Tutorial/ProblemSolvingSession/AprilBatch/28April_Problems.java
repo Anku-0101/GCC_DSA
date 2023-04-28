@@ -34,3 +34,32 @@ class Main {
 
     }
 }
+
+
+///////// 
+
+class Main {
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+
+        while(t-- > 0){
+            int pa = sc.nextInt();
+            int pb = sc.nextInt();
+            int maxTimeP = (pa > pb) ? pa : pb;
+            int qa = sc.nextInt();
+            int qb = sc.nextInt();
+            int maxTimeQ = (qa > qb) ? qa : qb;
+
+            if(maxTimeP == maxTimeQ){
+                System.out.println("TIE");
+            }
+            if(maxTimeP > maxTimeQ){
+                System.out.println("Q");
+            }
+            else if(maxTimeQ > maxTimeP){
+                System.out.println("P");
+            }
+        }
+    }
+}
