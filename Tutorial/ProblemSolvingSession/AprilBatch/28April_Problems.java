@@ -63,3 +63,50 @@ class Main {
         }
     }
 }
+
+////
+// Without using ternary operator
+
+import java.io.*; // for handling input/output
+import java.util.*; // contains Collections framework
+
+// don't change the name of this class
+// you can add inner classes if needed
+class Main {
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+
+        while(t-- > 0){
+            int pa = sc.nextInt();
+            int pb = sc.nextInt();
+            int maxTimeP;
+            if(pa > pb){
+                maxTimeP = pa;
+            }
+            else{
+                maxTimeP = pb;
+            }
+            // = (pa > pb) ? pa : pb;
+            int qa = sc.nextInt();
+            int qb = sc.nextInt();
+            int maxTimeQ; //= (qa > qb) ? qa : qb;
+            if(qa > qb){
+                maxTimeQ = qa;
+            }
+            else{
+                maxTimeQ = qb;
+            }
+
+            if(maxTimeP == maxTimeQ){
+                System.out.println("TIE");
+            }
+            if(maxTimeP > maxTimeQ){
+                System.out.println("Q");
+            }
+            else if(maxTimeQ > maxTimeP){
+                System.out.println("P");
+            }
+        }
+    }
+}
