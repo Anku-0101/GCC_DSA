@@ -183,3 +183,48 @@ class Main {
         return count;
     }
 }
+
+
+import java.io.*; // for handling input/output
+import java.util.*; // contains Collections framework
+
+// don't change the name of this class
+// you can add inner classes if needed
+class Main {
+    public static void main (String[] args) {
+        // Your code here
+        Scanner sc = new Scanner(System.in);
+        long x = sc.nextLong();
+        long n = sc.nextLong();
+        
+        long pos = getPosition(n);   
+        
+        getAnswer(x, pos);
+
+    }
+    static void getAnswer(long x, long pos){
+        long start = (x > 0) ? x : -1*x;
+        if(start %2 ==  0){
+            System.out.println(x + pos);
+        }
+        else{
+            System.out.println(x - pos);
+        }
+    }
+    static long getPosition(long n){
+        int rem = n%4;
+
+        if(rem == 0){
+            return 0;
+        }
+        if(rem == 1){
+            return -1*n;
+        }
+        if(rem == 2){
+            return 1;
+        }
+        
+        return (1+n);
+    }
+        
+}
