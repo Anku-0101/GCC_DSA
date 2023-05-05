@@ -228,3 +228,25 @@ class Main {
     }
         
 }
+
+
+
+/// JUMPING NUMBER >> PSUEDO CODE
+
+static boolean yourSolution(){
+
+int num = sc.nextInt();
+int last = n%10;
+n = n/10;
+
+
+int secLast;
+while(n > 0){
+   secLast = n%10;
+   if(secLast - last != 1 || secLast - last != -1){
+       return false;
+   }
+   secLast = last;
+}
+return true;
+}
