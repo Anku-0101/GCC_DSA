@@ -1,3 +1,19 @@
-.heading-class{
+.heading-class{ 
     color: red;
+}
+
+#para1{
+    color: blue;
+    font-size: 25px;
+    padding: 50px;
+}
+
+#para2{
+    color: green;
+    font-size: 25px;
+}
+
+#para3{
+    color: pink;
+    font-size: 25px;
 }
