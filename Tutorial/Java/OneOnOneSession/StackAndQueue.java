@@ -71,3 +71,86 @@ class Stack{
         return (top==-1);
     }
 }
+
+
+
+
+////////////////////
+
+class StackULinkedList {
+    public static void main(String[] args) {
+        Stack st = new Stack();
+        st.push(100);
+        System.out.println("top == " + st.top());
+        st.push(99);
+        System.out.println("top == " + st.top());
+        st.pop();
+        System.out.println("top == " + st.top());
+        st.pop();
+        System.out.println("top == " + st.top());
+        st.pop();
+        st.pop();
+        st.push(1);
+        st.push(2);
+        st.push(3);
+        st.push(4);
+        st.push(5);
+        st.push(6);
+        st.push(7);
+        System.out.println("top == " + st.top());
+    }
+}
+
+class Node {
+    int data;
+    Node next;
+    Node(int data) {
+        this.data = data;
+        this.next = null;
+    }
+
+}
+
+class Stack {
+    Node top;
+    int size;
+    
+    Stack() {
+        top = null;
+        size =0;
+    }
+
+    void push(int data) {
+        Node newNode = new Node(data);
+        newNode.next = top;
+        top = newNode;
+        size++;
+        System.out.println(data + " pushed to Stack");
+    }
+    
+    void pop() {
+        if (isEmpty()) {
+            System.out.println("Stack is empty, nothing to pop");
+            return;
+        }
+        System.out.println(top.data + " is popped");
+        top = top.next;
+        size--;
+    }
+    
+    int top() {
+        if (!isEmpty())
+            return top.data;
+            
+        System.out.println("Stack is empty");
+        return -1;
+    }
+    
+    int size() {
+        return size;
+    }
+    
+    boolean isEmpty() {
+        return top == null;
+    }
+}
