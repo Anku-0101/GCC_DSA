@@ -40,10 +40,7 @@ class QueueArr{
         arr[++rear] = x;
     }
 
-    void Dequeue(){
-        if(isFull())
-            return;
-        
+    void Dequeue(){     
         if(front == rear){
             front = -1;
             rear = -1;
