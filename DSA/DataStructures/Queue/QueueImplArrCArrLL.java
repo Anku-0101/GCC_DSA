@@ -79,7 +79,7 @@ class QueueCircularArr{
             System.out.println("Queue is full");
             return;
         }
-        rear = (rear+1)%size;
+        rear = (rear+1 + size)%size;
 
         if(isEmpty()){
             front = 0;    
@@ -100,7 +100,7 @@ class QueueCircularArr{
             return;
         }
 
-        front = (front + 1)%size;
+        front = (front + 1 + size)%size;
     }
     int front(){
         if(isEmpty()){
