@@ -3,9 +3,20 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
       System.out.println("Hello, World!");
-      System.out.println(getDiff(
-        new Date(13,8,2023),
-        new Date(26,11,2023)
+      Scanner sc = new Scanner(System.in);
+      
+      System.out.println("Enter date 1 in DD MM YYY format");
+      int day1 = sc.nextInt();    
+      int month1 = sc.nextInt();    
+      int year1 = sc.nextInt();    
+      System.out.println("Enter date 2 in DD MM YYY format");
+      int day2 = sc.nextInt();    
+      int month2 = sc.nextInt();    
+      int year2 = sc.nextInt();    
+      
+      System.out.println("Number of days = " + getDiff(
+        new Date(day1,month1,year1),
+        new Date(day2,month2,year2)
         ));
     }
     
