@@ -102,3 +102,19 @@ const fullName = users.map((x) =>{
         return x.firstName + " " + x.lastName;
     });
 console.log(fullName);
+
+
+// first name of all the people whose age is less than 30
+
+/// chaining these methods
+const lessThan30 = users.filter((x)=> x.age < 30).map((x) => x.firstName);
+console.log(lessThan30);
+
+const lessThan30Reduce = users.reduce(function(acc, curr){
+    if(curr.age < 30){
+        acc.push(curr.firstName);
+    }
+    return acc;
+},[])
+
+console.log(lessThan30Reduce);
