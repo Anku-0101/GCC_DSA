@@ -36,3 +36,69 @@ const getBinary = function(x){
 }
 
 //console.log(getBinary(3));
+
+const even = arr.filter((x) => x%2==0);
+const greaterThan4 = arr.filter((x) => x > 4);
+
+const getSum = arr.reduce(function(acc, curr){
+    acc = acc + curr;
+    return acc;
+}, 0);
+
+const getMax = arr.reduce(function(acc, curr){
+    if(acc < curr)
+        acc = curr
+},arr[0]);
+
+// Online Javascript Editor for free
+// Write, Edit and Run your Javascript code using JS Online Compiler
+
+const users =[
+        {firstName : "Aman", lastName : "Kumar", age : 24},
+        {firstName : "Rajesh", lastName : "Verma", age : 30},
+        {firstName : "Raj", lastName : "Sahi", age : 23},
+        {firstName : "Kartik", lastName : "Kamal", age : 24},
+        {firstName : "Krishna", lastName : "Gopal", age : 23}
+    ];
+    
+    // obj = {24 : 2, 30 : 1, 23 : 2
+    
+    const output = users.reduce(function(acc, curr){
+        if(acc[curr.age]){
+            acc[curr.age] = ++acc[curr.age];
+        }
+        else{
+            acc[curr.age] = 1;
+        }
+        return acc;
+    }, {});
+
+console.log(output);
+
+
+const users =[
+        {firstName : "Aman", lastName : "Kumar", age : 24},
+        {firstName : "Rajesh", lastName : "Verma", age : 30},
+        {firstName : "Raj", lastName : "Sahi", age : 23},
+        {firstName : "Kartik", lastName : "Kamal", age : 24},
+        {firstName : "Krishna", lastName : "Gopal", age : 23}
+    ];
+    
+    // obj = {24 : 2, 30 : 1, 23 : 2
+    
+    const output = users.reduce(function(acc, curr){
+        if(acc[curr.age]){
+            acc[curr.age] = ++acc[curr.age];
+        }
+        else{
+            acc[curr.age] = 1;
+        }
+        return acc;
+    }, {});
+
+console.log(output);
+
+const fullName = users.map((x) =>{
+        return x.firstName + " " + x.lastName;
+    });
+console.log(fullName);
