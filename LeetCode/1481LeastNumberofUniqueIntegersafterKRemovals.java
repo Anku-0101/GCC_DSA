@@ -11,14 +11,14 @@ class Solution {
             pq.add(entry.getValue());
         }
         //System.out.println(pq+" pq.peek() = "+pq.peek());
-        
-        while(!pq.isEmpty() && k>0){
-            if(pq.peek() <= k){
-                k -= pq.poll();
-            }else{
-                k=0;
+        int elementsRemoved = 0;
+        while(!pq.isEmpty()){
+            elementsRemoved += pq.peek();
+            if(elementsRemoved > k){
+                return pq.size(); 
             }
+            pq.poll();
         }
-        return pq.size();
+        return 0;
     }
 }
