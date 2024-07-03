@@ -2,6 +2,7 @@ class Solution {
     public void rotate(int[][] matrix) {
         int n = matrix.length;
 
+        // Transpose
         for(int i = 0; i<n; i++){
             for(int j=i+1; j<n; j++){
                 int tmp = matrix[i][j];
@@ -9,7 +10,8 @@ class Solution {
                 matrix[j][i] = tmp;
             }
         }
-        
+
+        // reverse row
         for(int i = 0; i<n; i++){
             int start = 0, end = n-1;
             while(start < end){
