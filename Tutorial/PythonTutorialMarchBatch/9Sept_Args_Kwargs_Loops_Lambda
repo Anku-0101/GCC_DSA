@@ -131,3 +131,5 @@ my_list = [1,2,3,-4,5]
 #result_list = my_map(cube, my_list)
 result_list = my_map(square, my_list)
 print(result_list)
+
+print(my_map(lambda x:x**4, [9,0,8,-3]))
