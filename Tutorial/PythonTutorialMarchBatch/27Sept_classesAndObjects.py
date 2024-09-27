@@ -70,6 +70,58 @@ my_lib.getAll()
 
 
 
+# Using dictionary to optimize the code, and adding more functionality like number of copies of a book
+
+class library:
+    
+    def __init__(self):
+        self.books = {}
+    
+    def add(self, book):
+        if book in self.books:
+            self.books[book] += 1
+        else:
+            self.books[book] = 1
+    
+    def remove(self, book):
+        try:
+            if book in self.books:
+                if self.books[book] > 1:
+                    self.books[book] -= 1
+            else:
+                self.books.pop(book)
+            else:
+                raise BookNotFoundError
+        except Exception as e:
+            print('Book is not present')
+
+
+    def find(self, book):
+        if book in self.books: # please check
+            print('Book is present in library')
+        else:
+            print('Book is not present in library')
+
+
+    def getall(self):
+        print(self.books) # also make books dicitonary as private
+
+
+
+my_library = library()
+my_library.add('Harry Potter 1')
+my_library.add('Lord Of The Rings')
+my_library.add('Harry Potter 1')
+my_library.remove('receipe book')
+my_library.remove('Harry Potter 1')
+
+my_library.find('Harry Potter 1')
+my_library.getall() 
+
+
+
+
+
 
 
 
