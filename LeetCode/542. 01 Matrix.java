@@ -121,3 +121,58 @@ class Data{
         this.level = level;
     }
 }
+
+
+/// Further Optimized, similar GFG problem, https://www.geeksforgeeks.org/problems/distance-of-nearest-cell-having-1-1587115620/1
+class Info{
+    int row, col, dist;
+    public Info(int row, int col, int dist){
+        this.row = row;
+        this.col = col;
+        this.dist = dist;
+    }
+}
+class Solution
+{
+    //Function to find distance of nearest 1 in the grid for each cell.
+    public int[][] nearest(int[][] grid)
+    {
+        int m = grid.length;
+        int n = grid[0].length;
+        Queue<Info> q = new LinkedList<>();
+        boolean visited[][] = new boolean[m][n];
+        int res[][] = new int[m][n];
+        
+        for(int i = 0; i < m; i++){
+            for(int j = 0; j < n; j++){
+                if(grid[i][j] == 1){
+                    visited[i][j] = true;
+                    q.add(new Info(i,j,0));
+                }
+            }
+        }
+        
+        while(!q.isEmpty()){
+            Info x = q.poll();
+            int row = x.row;
+            int col = x.col;
+            int dist = x.dist;
+            res[row][col] = dist;
+            
+            int[] delRow = {0,1,-1,0};
+            int[] delCol = {1,0,0,-1};
+            
+            for(int i = 0; i<4; i++){
+                int _row = row + delRow[i];
+                int _col = col + delCol[i];
+                
+                if(_row >= 0 && _row < m && _col >=0 && _col <n && !visited[_row][_col]){
+                    q.add(new Info(_row,_col,dist+1));
+                    visited[_row][_col] = true;
+                }
+            }
+        }
+        return res;
+    }
+    
+}
