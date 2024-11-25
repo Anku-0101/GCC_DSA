@@ -1,0 +1,5 @@
+1. We learned Loops.
+2. We learned recursion.
+3. We learned ifelse.
+4. We learned string operation.
+5. We learned diff data types.

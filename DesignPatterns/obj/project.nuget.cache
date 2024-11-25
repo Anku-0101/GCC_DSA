@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "65jjNB/evNd27yYUEVz1fRtiXMSkE/Pyot2A+AGk9d5R6ialxqWbusEF+PrSkwMXsAr06WRYABUkfLsu/uzvcA==",
+  "success": true,
+  "projectFilePath": "/Users/anku.choudhary/Desktop/Galaxy/Training/DesignPatterns/DesignPatterns/DesignPatterns.csproj",
+  "expectedPackageFiles": [
+    "/Users/anku.choudhary/.nuget/packages/microsoft.aspnetcore.app.ref/3.1.10/microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "/Users/anku.choudhary/.nuget/packages/microsoft.netcore.app.host.osx-x64/3.1.29/microsoft.netcore.app.host.osx-x64.3.1.29.nupkg.sha512",
+    "/Users/anku.choudhary/.nuget/packages/microsoft.netcore.app.ref/3.1.0/microsoft.netcore.app.ref.3.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}

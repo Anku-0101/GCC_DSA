@@ -1,0 +1,74 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="SolidPrinciples\" />
+    <None Remove="SolidPrinciples\SingleResponsibilityPrinciple\" />
+    <None Remove="SolidPrinciples\InterfaceSegregationPrinciple\" />
+    <None Remove="SolidPrinciples\OpenClosedPrinciple\" />
+    <None Remove="SolidPrinciples\LiskovSubstitutionPrinciple\" />
+    <None Remove="SolidPrinciples\DependencyInversionPrinciple \" />
+    <None Remove="DesignPatterns\" />
+    <None Remove="DesignPatterns\Creational \" />
+    <None Remove="DesignPatterns\Structural\" />
+    <None Remove="DesignPatterns\Behavioural \" />
+    <None Remove="DesignPatterns\Creational \Singleton\" />
+    <None Remove="DesignPatterns\Creational \Builder\" />
+    <None Remove="DesignPatterns\Creational \Factory \" />
+    <None Remove="DesignPatterns\Creational \Prototype\" />
+    <None Remove="DesignPatterns\Structural\Adapter\" />
+    <None Remove="DesignPatterns\Structural\Bridge\" />
+    <None Remove="DesignPatterns\Structural\Composite\" />
+    <None Remove="DesignPatterns\Structural\Decorator\" />
+    <None Remove="DesignPatterns\Structural\Facade\" />
+    <None Remove="DesignPatterns\Structural\Flyweight\" />
+    <None Remove="DesignPatterns\Structural\Proxy\" />
+    <None Remove="DesignPatterns\Behavioural \ChainOfResponsibility\" />
+    <None Remove="DesignPatterns\Behavioural \Command\" />
+    <None Remove="DesignPatterns\Behavioural \Iterator\" />
+    <None Remove="DesignPatterns\Behavioural \Mediator\" />
+    <None Remove="DesignPatterns\Behavioural \Memento\" />
+    <None Remove="DesignPatterns\Behavioural \Observer\" />
+    <None Remove="DesignPatterns\Behavioural \State\" />
+    <None Remove="DesignPatterns\Behavioural \Strategy\" />
+    <None Remove="DesignPatterns\Behavioural \Template\" />
+    <None Remove="DesignPatterns\Behavioural \Visitor\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="SolidPrinciples\" />
+    <Folder Include="SolidPrinciples\SingleResponsibilityPrinciple\" />
+    <Folder Include="SolidPrinciples\InterfaceSegregationPrinciple\" />
+    <Folder Include="SolidPrinciples\OpenClosedPrinciple\" />
+    <Folder Include="SolidPrinciples\LiskovSubstitutionPrinciple\" />
+    <Folder Include="SolidPrinciples\DependencyInversionPrinciple \" />
+    <Folder Include="DesignPatterns\" />
+    <Folder Include="DesignPatterns\Creational \" />
+    <Folder Include="DesignPatterns\Structural\" />
+    <Folder Include="DesignPatterns\Behavioural \" />
+    <Folder Include="DesignPatterns\Creational \Singleton\" />
+    <Folder Include="DesignPatterns\Creational \Builder\" />
+    <Folder Include="DesignPatterns\Creational \Factory \" />
+    <Folder Include="DesignPatterns\Creational \Prototype\" />
+    <Folder Include="DesignPatterns\Structural\Adapter\" />
+    <Folder Include="DesignPatterns\Structural\Bridge\" />
+    <Folder Include="DesignPatterns\Structural\Composite\" />
+    <Folder Include="DesignPatterns\Structural\Decorator\" />
+    <Folder Include="DesignPatterns\Structural\Facade\" />
+    <Folder Include="DesignPatterns\Structural\Flyweight\" />
+    <Folder Include="DesignPatterns\Structural\Proxy\" />
+    <Folder Include="DesignPatterns\Behavioural \ChainOfResponsibility\" />
+    <Folder Include="DesignPatterns\Behavioural \Command\" />
+    <Folder Include="DesignPatterns\Behavioural \Iterator\" />
+    <Folder Include="DesignPatterns\Behavioural \Mediator\" />
+    <Folder Include="DesignPatterns\Behavioural \Memento\" />
+    <Folder Include="DesignPatterns\Behavioural \Observer\" />
+    <Folder Include="DesignPatterns\Behavioural \State\" />
+    <Folder Include="DesignPatterns\Behavioural \Strategy\" />
+    <Folder Include="DesignPatterns\Behavioural \Template\" />
+    <Folder Include="DesignPatterns\Behavioural \Visitor\" />
+  </ItemGroup>
+</Project>

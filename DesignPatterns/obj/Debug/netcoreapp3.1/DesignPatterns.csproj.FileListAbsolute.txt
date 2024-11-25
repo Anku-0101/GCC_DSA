@@ -1,0 +1,14 @@
+/Users/anku.choudhary/Desktop/Galaxy/Training/DesignPatterns/DesignPatterns/bin/Debug/netcoreapp3.1/DesignPatterns
+/Users/anku.choudhary/Desktop/Galaxy/Training/DesignPatterns/DesignPatterns/bin/Debug/netcoreapp3.1/DesignPatterns.deps.json
+/Users/anku.choudhary/Desktop/Galaxy/Training/DesignPatterns/DesignPatterns/bin/Debug/netcoreapp3.1/DesignPatterns.runtimeconfig.json
+/Users/anku.choudhary/Desktop/Galaxy/Training/DesignPatterns/DesignPatterns/bin/Debug/netcoreapp3.1/DesignPatterns.runtimeconfig.dev.json
+/Users/anku.choudhary/Desktop/Galaxy/Training/DesignPatterns/DesignPatterns/bin/Debug/netcoreapp3.1/DesignPatterns.dll
+/Users/anku.choudhary/Desktop/Galaxy/Training/DesignPatterns/DesignPatterns/bin/Debug/netcoreapp3.1/DesignPatterns.pdb
+/Users/anku.choudhary/Desktop/Galaxy/Training/DesignPatterns/DesignPatterns/obj/Debug/netcoreapp3.1/DesignPatterns.csproj.AssemblyReference.cache
+/Users/anku.choudhary/Desktop/Galaxy/Training/DesignPatterns/DesignPatterns/obj/Debug/netcoreapp3.1/DesignPatterns.GeneratedMSBuildEditorConfig.editorconfig
+/Users/anku.choudhary/Desktop/Galaxy/Training/DesignPatterns/DesignPatterns/obj/Debug/netcoreapp3.1/DesignPatterns.AssemblyInfoInputs.cache
+/Users/anku.choudhary/Desktop/Galaxy/Training/DesignPatterns/DesignPatterns/obj/Debug/netcoreapp3.1/DesignPatterns.AssemblyInfo.cs
+/Users/anku.choudhary/Desktop/Galaxy/Training/DesignPatterns/DesignPatterns/obj/Debug/netcoreapp3.1/DesignPatterns.csproj.CoreCompileInputs.cache
+/Users/anku.choudhary/Desktop/Galaxy/Training/DesignPatterns/DesignPatterns/obj/Debug/netcoreapp3.1/DesignPatterns.dll
+/Users/anku.choudhary/Desktop/Galaxy/Training/DesignPatterns/DesignPatterns/obj/Debug/netcoreapp3.1/DesignPatterns.pdb
+/Users/anku.choudhary/Desktop/Galaxy/Training/DesignPatterns/DesignPatterns/obj/Debug/netcoreapp3.1/DesignPatterns.genruntimeconfig.cache
