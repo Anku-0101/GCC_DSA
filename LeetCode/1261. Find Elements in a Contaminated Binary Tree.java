@@ -17,25 +17,19 @@ class FindElements {
     HashSet<Integer> nodes = new HashSet<>();
 
     public FindElements(TreeNode root) {
-        if(root != null){
-            root.val = 0;
-            nodes.add(root.val);
-        }
+        root.val = 0;
         recoverTree(root);
     }
     
     private void recoverTree(TreeNode root){
-        if(root== null || (root.left == null && root.right == null)){
-            return;
-        }
+        nodes.add(root.val);
+
         if(root.left != null){
             root.left.val = root.val*2+1;
-            nodes.add(root.left.val);
             recoverTree(root.left);
         }
         if(root.right != null){
             root.right.val = root.val*2+2;
-            nodes.add(root.right.val);
             recoverTree(root.right);
         }
     }
