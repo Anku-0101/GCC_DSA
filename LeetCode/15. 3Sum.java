@@ -6,6 +6,7 @@ class Solution {
         int n = nums.length;
         for(int i = 0; i<n; i++){
             if(i > 0 && nums[i] == nums[i-1])continue;
+            if(nums[i] > 0)break;
             int num1 = nums[i];
             getSum(nums, -1*num1, i+1, n-1);
         }
