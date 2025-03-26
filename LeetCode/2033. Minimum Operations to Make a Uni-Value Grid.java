@@ -33,3 +33,33 @@ class Solution {
         return Math.min(count1, Math.min(count2, count3));
     }
 }
+
+// Optimized
+
+class Solution {
+    public int minOperations(int[][] grid, int x) {
+        int m = grid.length;
+        int n = grid[0].length;
+        int[] arr = new int[m*n];
+        int idx = 0;
+
+        for(int i = 0; i<m; i++){
+            for(int j = 0; j<n; j++){
+                if((grid[i][j]-grid[0][0]) % x != 0)return -1;
+                arr[idx++] = grid[i][j];
+            }
+        }
+        
+        Arrays.sort(arr);
+        int mid = arr[idx/2];
+        int count = 0;
+        
+        for(int i = 0; i<arr.length; i++){
+            int num = arr[i];
+            int diff = mid-arr[i] > 0 ? mid-arr[i]:arr[i]-mid;
+            if(diff%x !=0 )return -1;
+            count += diff/x;
+        }
+        return count;
+    }
+}
